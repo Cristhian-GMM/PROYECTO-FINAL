@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido, Estudiante</h1>
+        <p>Aquí podrás ver tus notas.</p>
+
+        <!-- Aquí se podrían listar las notas del estudiante -->
+        <table>
+            <tr>
+                <th>Materia</th>
+                <th>Nota</th>
+            </tr>
+            <tr>
+                <td>Matemáticas</td>
+                <td>8.5</td>
+            </tr>
+            <tr>
+                <td>Física</td>
+                <td>7.0</td>
+            </tr>
+            <!-- Más filas de notas pueden agregarse aquí -->
+        </table>
+
+        <a href="{{ url_for('index') }}" class="btn">Volver al Inicio</a>
+    </div>
+</body>
+</html>

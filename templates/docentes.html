@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materias de los Docentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #2d3436, #000);
+            color: #ecf0f1;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, #6c5ce7, #00cec9);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Contenido principal */
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #dfe6e9;
+            text-align: center;
+        }
+
+        /* Lista de materias */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            background: linear-gradient(45deg, #6c5ce7, #00cec9);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #00cec9, #6c5ce7);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Botón de pie de página */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+
+        footer button {
+            background: linear-gradient(45deg, #d63031, #e84393);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #e84393, #d63031);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        footer button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            main p {
+                font-size: 1rem;
+            }
+
+            a {
+                font-size: 1rem;
+            }
+
+            footer button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Materias Asignadas a los Docentes</h1>
+    </header>
+    <main>
+        <p>Selecciona una materia para gestionar:</p>
+        <ul>
+            <li><a href="/materia/Lenguaje y Comunicación">Lenguaje y Comunicación</a></li>
+            <li><a href="/materia/Matemáticas">Matemáticas</a></li>
+            <li><a href="/materia/Inglés">Inglés</a></li>
+            <li><a href="/materia/Física">Física</a></li>
+            <li><a href="/materia/Química">Química</a></li>
+            <li><a href="/materia/Ciencias Sociales">Ciencias Sociales</a></li>
+            <li><a href="/materia/Música">Música</a></li>
+            <li><a href="/materia/Religión">Religión</a></li>
+            <li><a href="/materia/Artes Plásticas">Artes Plásticas</a></li>
+            <li><a href="/materia/Psicología">Psicología</a></li>
+        </ul>
+    </main>
+    <footer>
+        <button onclick="window.location.href='/'">Volver al Inicio</button>
+    </footer>
+</body>
+</html>

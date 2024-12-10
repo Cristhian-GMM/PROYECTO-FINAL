@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Notas - {{ materia }}</title>
+</head>
+<body>
+    <h1>Gestionar Notas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Estudiante</th>
+                <th>Nota</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in notas %}
+            <tr>
+                <td>{{ nota[1] }}</td>
+                <td>{{ nota[2] }}</td>
+                <td>
+                    <!-- Botón para modificar las notas -->
+                    <form action="{{ url_for('modificar_nota', estudiante_id=nota[0], materia_id=materia_id) }}" method="POST">
+                        <button type="submit">Modificar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('materias_docente') }}">Volver a las materias</a>
+</body>
+</html>

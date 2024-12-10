@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - {{ tipo }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #2c3e50, #34495e);
+            color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal */
+        main {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #f1c40f;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Formulario */
+        form {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #ecf0f1;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #34495e;
+            background: #ecf0f1;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px #3498db;
+        }
+
+        /* Botón de envío */
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px 0;
+            margin-top: 1rem;
+            background: linear-gradient(45deg, #16a085, #1abc9c);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        button[type="submit"]:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #1abc9c, #16a085);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.95);
+        }
+
+        /* Botón volver */
+        button:last-of-type {
+            margin-top: 1rem;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        button:last-of-type:hover {
+            background: linear-gradient(45deg, #c0392b, #e74c3c);
+        }
+
+        /* Mensajes de error */
+        .alert {
+            background: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .alert p {
+            margin: 0;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            button[type="submit"], button:last-of-type {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Inicio de Sesión - {{ tipo }}</h1>
+        </header>
+        <form method="POST">
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-danger">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <button onclick="window.location.href='/'">Volver a Inicio</button>
+    </main>
+</body>
+</html>

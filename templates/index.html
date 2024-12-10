@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Registro de Notas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FF6F61, #FF3D00);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Encabezado */
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-bottom: 5px solid #FFB74D;
+            font-size: 3rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Contenedor principal */
+        .content {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+            flex-grow: 1;
+            z-index: 5;
+        }
+
+        .content div {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2.5rem;
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .content div:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5);
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #FFB74D;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        /* Botones */
+        button {
+            background-color: #FFB74D;
+            color: white;
+            padding: 1.1rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #FF6F61;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animación de entradas */
+        .content div {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .content div:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .content div:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            color: white;
+            text-align: center;
+            font-size: 1.1rem;
+            border-top: 5px solid #FFB74D;
+        }
+
+        footer p {
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Enlaces del pie de página */
+        footer a {
+            color: #FFB74D;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #FF6F61;
+        }
+
+        /* Estilos de enlace */
+        .button-container a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .button-container a:hover {
+            color: #FF6F61;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a la Plataforma de Registro de Notas</h1>
+    </header>
+
+    <div class="content">
+        <div>
+            <h2>Docentes</h2>
+            <p>Accede a tus materias y gestiona las notas de tus estudiantes. ¡Con toda la comodidad!</p>
+            <button onclick="window.location.href='/docentes'">Acceder como Docente</button>
+        </div>
+        <div>
+            <h2>Estudiantes</h2>
+            <p>Consulta tus notas, rendimiento académico y mucho más en tu perfil.</p>
+            <button onclick="window.location.href='/login/estudiantes'">Acceder como Estudiante</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Registro de Notas | Todos los derechos reservados</p>
+        <p><a href="/acerca">Acerca de</a> | <a href="/contacto">Contacto</a></p>
+    </footer>
+</body>
+</html>

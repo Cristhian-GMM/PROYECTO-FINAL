@@ -1,0 +1,9 @@
+<h1>Registrar Notas</h1>
+<form method="POST">
+    {% for estudiante in estudiantes %}
+        <label>{{ estudiante[1] }} {{ estudiante[2] }}</label>
+        <input type="number" name="nota_{{ estudiante[0] }}" placeholder="Ingrese la nota">
+        <br>
+    {% endfor %}
+    <button type="submit">Guardardsjkbf  Notas</button>
+</form>
